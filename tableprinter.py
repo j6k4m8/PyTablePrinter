@@ -84,9 +84,9 @@ class TablePrinter():
             str: MD representation of the data
         """
         md_out = []
-        md_out.append(str(self._bar + "{}" + self._bar)
+        md_out.append(str(self._bar + " {} " + self._bar)
                       .format("|".join([k[1] for k in self.col_order])))
-        md_out.append(str(self._bar + "{}" + self._bar)
+        md_out.append(str(self._bar + " {} " + self._bar)
                       .format("|".join(["-----"] * len(self.col_order))))
 
         for d in self.data:
