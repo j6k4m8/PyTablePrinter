@@ -38,9 +38,12 @@ class TablePrinter():
             self.data = data
 
         if col_order is None:
-            self.col_order = sorted(data[0].keys())
+            self.col_order = [(s, s) for s in sorted(data[0].keys())]
         else:
             self.col_order = col_order
+
+        if type(self.col_order[0]) is not tuple:
+            self.col_order = [(s, s) for s in self.col_order]
 
         for n in TITLEISH_KEYS:
             if n in self.col_order:
@@ -81,7 +84,7 @@ class TablePrinter():
         """
         md_out = []
         md_out.append(str(self._bar + "{}" + self._bar)
-                      .format("|".join(self.col_order)))
+                      .format("|".join([k[1] for k in self.col_order])))
         md_out.append(str(self._bar + "{}" + self._bar)
                       .format("|".join(["-----"] * len(self.col_order))))
 
@@ -92,8 +95,8 @@ class TablePrinter():
     def _markdown_row(self, d):
         row = []
         for k in self.col_order:
-            if k in d:
-                row.append(str(d[k]))
+            if k[0] in d:
+                row.append(str(d[k[0]]))
             else:
                 row.append("")
         return "| {} |".format('|'.join(row))
