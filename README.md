@@ -42,3 +42,14 @@ TablePrinter(data, col_order=['title', 'rating', 'has_sequel' 'favorite'])
 |-----|-----|-----|-----|
 | Oryx & Crake|5|True| |
 | Galapagos|5|| |
+
+You can also provide 2-tuples instead of a simple list for `col_order`. The first will be used as the lookup key, and the second string will be used as the table title.
+
+```python
+TablePrinter(data, col_order=[("title", "The Title Of The Book"), ("rating", "Rating"), ("has_sequel", "Sequel?"), ("favorite", "Favorite?")])
+```
+
+|The Title Of The Book|Rating|Sequel?|Favorite?|
+|-----|-----|-----|-----|
+| Oryx & Crake|5|True| |
+| Galapagos|5|| |
