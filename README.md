@@ -53,3 +53,10 @@ TablePrinter(data, col_order=[("title", "The Title Of The Book"), ("rating", "Ra
 |-----|-----|-----|-----|
 | Oryx & Crake|5|True| |
 | Galapagos|5|| |
+
+You can even mix the two, with something like:
+```python
+TablePrinter(data, col_order=[("title", "The Title Of The Book"), "rating", ("has_sequel", "Sequel?"), "favorite"])
+```
+
+heh that's so janky

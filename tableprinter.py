@@ -42,8 +42,9 @@ class TablePrinter():
         else:
             self.col_order = col_order
 
-        if type(self.col_order[0]) is not tuple:
-            self.col_order = [(s, s) for s in self.col_order]
+        for i in range(len(self.col_order)):
+            if type(self.col_order[i]) is not tuple:
+                self.col_order[i] = (self.col_order[i], self.col_order[i])
 
         for n in TITLEISH_KEYS:
             if n in self.col_order:
