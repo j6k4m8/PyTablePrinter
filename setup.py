@@ -1,11 +1,12 @@
 from distutils.core import setup
+import PyTablePrinter
 
 VERSION = PyTablePrinter.version
 
 setup(
     name = 'PyTablePrinter',
     packages = [
-        'TablePrinter'
+        'PyTablePrinter'
     ],
     version = VERSION,
     description = 'A Python library for generating markdown tables',
