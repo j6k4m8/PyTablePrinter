@@ -1,5 +1,12 @@
 # TablePrinter
 
+## Installation
+You can either clone this repository and use it locally, or install from pypi:
+
+```
+pip install pytableprinter
+```
+
 Use this Python library to easily print markdown tables of data that are either lists of dictionaries or dictionaries of dictionaries. For instance:
 
 ```python
