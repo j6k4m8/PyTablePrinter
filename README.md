@@ -53,7 +53,11 @@ TablePrinter(data, col_order=['title', 'rating', 'has_sequel' 'favorite'])
 You can also provide 2-tuples instead of a simple list for `col_order`. The first will be used as the lookup key, and the second string will be used as the table title.
 
 ```python
-TablePrinter(data, col_order=[("title", "The Title Of The Book"), ("rating", "Rating"), ("has_sequel", "Sequel?"), ("favorite", "Favorite?")])
+TablePrinter(data, col_order=[
+        ("title", "The Title Of The Book"),
+        ("rating", "Rating"),
+        ("has_sequel", "Sequel?"),
+        ("favorite", "Favorite?")])
 ```
 
 |The Title Of The Book|Rating|Sequel?|Favorite?|
@@ -63,7 +67,11 @@ TablePrinter(data, col_order=[("title", "The Title Of The Book"), ("rating", "Ra
 
 You can even mix the two, with something like:
 ```python
-TablePrinter(data, col_order=[("title", "The Title Of The Book"), "rating", ("has_sequel", "Sequel?"), "favorite"])
+TablePrinter(data, col_order=[
+        ("title", "The Title Of The Book"),
+        "rating",
+        ("has_sequel", "Sequel?"),
+        "favorite"])
 ```
 
 ## ...and for my final trick...
