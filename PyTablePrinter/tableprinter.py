@@ -38,13 +38,16 @@ class TablePrinter():
             self.data = data
 
         if col_order is None:
-            self.col_order = [(s, s) for s in sorted(data[0].keys())]
+            self.col_order = [(s, s, None) for s in sorted(data[0].keys())]
         else:
             self.col_order = col_order
 
         for i in range(len(self.col_order)):
             if type(self.col_order[i]) is not tuple:
-                self.col_order[i] = (self.col_order[i], self.col_order[i])
+                self.col_order[i] = (self.col_order[i], self.col_order[i], None)
+            # else:
+            #     if hasattr(self.col_order[i][2], '__call__'):
+            #
 
         for n in TITLEISH_KEYS:
             if n in self.col_order:
@@ -96,7 +99,10 @@ class TablePrinter():
     def _markdown_row(self, d):
         row = []
         for k in self.col_order:
-            if k[0] in d:
+            if len(k) is 3 and hasattr(k[2], '__call__'):
+                # the last item in the tuple is a function
+                row.append(str(k[2](d)))
+            elif k[0] in d:
                 row.append(str(d[k[0]]))
             else:
                 row.append("")

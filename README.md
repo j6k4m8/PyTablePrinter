@@ -59,4 +59,12 @@ You can even mix the two, with something like:
 TablePrinter(data, col_order=[("title", "The Title Of The Book"), "rating", ("has_sequel", "Sequel?"), "favorite"])
 ```
 
-heh that's so janky
+## ...and for my final trick...
+
+The latest, neatest trick is the implementation of functions as columns as well. If you provide a 3-tuple and the last item is a function, you can run a function on each datum like so:
+
+```python
+("rating percentage", "Rating %", lambda d: str(100. * d['rating']/5.0) + "%")
+```
+
+(This, of course, returns a percentage rating, using the `rating` field, as calculated out of a possible `5`.)
