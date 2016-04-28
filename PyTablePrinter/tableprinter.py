@@ -107,3 +107,25 @@ class TablePrinter():
             else:
                 row.append("")
         return "| {} |".format('|'.join(row))
+
+    def to_latex(self, hrules="hline"):
+        ltx_out = []
+        ltx_out.append("\\begin{center}")
+        ltx_out.append("\\begin{{tabular}}{{ {} }}".format(" c " * len(self.col_order)))
+
+        for d in self.data:
+            ltx_out.append(self._latex_row(d))
+        ltx_out.append("\\end{tabular}")
+        ltx_out.append("\\end{center}")
+        return "\n".join(ltx_out)
+
+    def _latex_row(self, d):
+        row = []
+        for k in self.col_order:
+            if len(k) is 3 and hasattr(k[2], '__call__'):
+                row.append(str(k[2](d)))
+            elif k[0] in d:
+                row.append(str(d[k[0]]))
+            else:
+                row.append("")
+        return " {} ".format(" & ".join(row)) + "\\\\"
