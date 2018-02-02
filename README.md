@@ -1,5 +1,7 @@
 # TablePrinter
 
+Convert dictionaries of data into nicely printed tables in LaTeX or Markdown.
+
 ## Installation
 You can either clone this repository and use it locally, or install from pypi:
 
