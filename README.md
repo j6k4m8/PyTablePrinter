@@ -56,10 +56,11 @@ You can also provide 2-tuples instead of a simple list for `col_order`. The firs
 
 ```python
 TablePrinter(data, col_order=[
-        ("title", "The Title Of The Book"),
-        ("rating", "Rating"),
-        ("has_sequel", "Sequel?"),
-        ("favorite", "Favorite?")])
+    ("title",       "The Title Of The Book"),
+    ("rating",      "Rating"),
+    ("has_sequel",  "Sequel?"),
+    ("favorite",    "Favorite?")
+])
 ```
 
 |The Title Of The Book|Rating|Sequel?|Favorite?|
@@ -70,10 +71,11 @@ TablePrinter(data, col_order=[
 You can even mix the two, with something like:
 ```python
 TablePrinter(data, col_order=[
-        ("title", "The Title Of The Book"),
-        "rating",
-        ("has_sequel", "Sequel?"),
-        "favorite"])
+    ("title",        "The Title Of The Book"),
+    "rating",
+    ("has_sequel",   "Sequel?"),
+    "favorite"
+])
 ```
 
 ## ...and for my final trick...
