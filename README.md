@@ -83,3 +83,7 @@ The latest, neatest trick is the implementation of functions as columns as well.
 ```
 
 (This, of course, returns a percentage rating, using the `rating` field, as calculated out of a possible `5`.)
+
+| ... | Rating % | 
+|-----|------|
+| ... | 80% |
