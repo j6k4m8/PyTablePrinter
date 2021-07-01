@@ -1,5 +1,7 @@
 # TablePrinter
 
+> **NOTE**: You might be able to use the built-in `pandas.DataFrame.to_latex()` or `to_markdown()` calls now... Though it bears mentioning that this may require additional dependencies to work properly (PyTablePrinter does not have any dependencies).
+
 Convert dictionaries of data into nicely printed tables in LaTeX or Markdown.
 
 ## Installation
